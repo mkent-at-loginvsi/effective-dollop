@@ -1,0 +1,15 @@
+name: Build Appliance Installer
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Display Runtime Env
+        run: |
+          whoami
+          pwd
+          terraform -v
+
