@@ -12,4 +12,5 @@ jobs:
           whoami
           pwd
           terraform -v
+          ls -la
 
