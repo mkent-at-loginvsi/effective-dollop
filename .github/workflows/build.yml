@@ -13,4 +13,7 @@ jobs:
           pwd
           terraform -v
           ls -la
-
+     
+      - name: Build Appliance Installer
+        run: |
+          sh build/build.sh
