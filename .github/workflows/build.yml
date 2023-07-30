@@ -16,4 +16,4 @@ jobs:
      
       - name: Build Appliance Installer
         run: |
-          sh build/build.sh
+          sh build/build.sh -v '5.2.2'
