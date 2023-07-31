@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the main branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: echo date >> date.txt
         run: |
@@ -17,7 +17,7 @@ jobs:
 
       - name: Tar files
         run: tar -cvf build.tar build/
-        
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
