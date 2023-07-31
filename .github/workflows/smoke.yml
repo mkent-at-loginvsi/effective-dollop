@@ -1,6 +1,6 @@
 name: Smoke Test Ansible and Terraform
 
-on: workflow_dispatch
+on: push
 
 jobs:
   smoke-test:
