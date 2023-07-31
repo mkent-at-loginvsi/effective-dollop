@@ -6,14 +6,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Display Runtime Env
+      - name: Checkout the main branch
+        uses: actions/checkout@v2
+
+      - name: echo date >> date.txt
         run: |
-          whoami
-          pwd
-          terraform -v
-          ls -la
-     
-      - name: Build Appliance Installer
-        run: |
-          sh build/build.sh -v '5.2.2'
+          mkdir build
+          echo date >> build/build.txt
+          cat build/build.txt
+
+      - name: Tar files
+        run: tar -cvf build.tar build/
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build.tar      
+      
+      #- name: Display Runtime Env
+      #  run: |
+      #    whoami
+      #    pwd
+      #    terraform -v
+      #    ls -la
