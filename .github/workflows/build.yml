@@ -11,7 +11,7 @@ jobs:
 
       - name: Capture build date into release
         run: |
-          mkdir build
+          mkdir release
           echo date >> release/release.txt
           cat release/release.txt
 
