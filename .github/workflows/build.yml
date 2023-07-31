@@ -9,20 +9,20 @@ jobs:
       - name: Checkout the main branch
         uses: actions/checkout@v3
 
-      - name: echo date >> date.txt
+      - name: Capture build date into release
         run: |
           mkdir build
-          echo date >> build/build.txt
-          cat build/build.txt
+          echo date >> release/release.txt
+          cat release/release.txt
 
       - name: Tar files
-        run: tar -cvf build.tar build/
+        run: tar -cvf release.tar release/
 
-      - name: Upload Artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: build
-          path: build.tar      
+          name: release
+          path: release.tar      
       
       #- name: Display Runtime Env
       #  run: |
