@@ -11,12 +11,12 @@ jobs:
 
       - name: Terraform Lint
         uses: actionshub/terraform-lint
-        with:
-          path: terraform
+        #with:
+        #  path: terraform
         continue-on-error: true
       
       - name: Ansible Lint
         uses: ansible/ansible-lint-action@v6.17.0
-        with:
-          path: ansible
+        #with:
+        #  path: ansible
         continue-on-error: true
