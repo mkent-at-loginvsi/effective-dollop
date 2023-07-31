@@ -1,0 +1,20 @@
+name: Smoke Test Ansible and Terraform
+
+on: workflow_dispatch
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the main branch
+        uses: actions/checkout@v3
+
+      - name: Terraform Lint
+        uses: eerkunt/terraform-lint-action@v0.1.0
+        with:
+          path: terraform
+      
+      - name: Ansible Lint
+        uses: ansible/ansible-lint-action@v4.1.0
+        with:
+          path: ansible
