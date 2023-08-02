@@ -1,3 +1,6 @@
+# Local .archive directories
+**/.archive/*
+
 # Local .terraform directories
 **/.terraform/*
 
